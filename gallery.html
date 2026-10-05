@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate – GAN</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+</head>
+<button id="scrollBtn" class="scroll-btn">
+  <span id="scrollIcon">↑</span>
+</button>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.png" alt="GAN Logo"/>
+      <span>GAN</span>
+    </a>
+    
+    <!-- DESKTOP NAVIGATION WITH DROPDOWN -->
+    <ul class="nav-links">
+      <li><a href="index.html" >Home</a></li>
+      
+      <!-- DROPDOWN: About → About, Team, Programs -->
+      <li class="has-dropdown">
+        <a href="about.html">About</a>
+        <div class="dropdown-menu">
+          <a href="about.html" >About Us</a>
+          <a href="team.html">Our Team</a>
+          <a href="programs.html">Programs</a>
+          <a href="gallery.html" class="active">Gallery</a>
+          <a href="blogs.html">Blog</a>
+        </div>
+      </li>
+      
+      
+      <li><a href="membership.html" >Membership</a></li>
+      <li><a href="conference2026.html" >GRSC2026</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="nav-ctas">
+      <a href="volunteer.html" class="btn-outline">Volunteer</a>
+      <a href="donate.html" class="btn-solid">Donate</a>
+    </div>
+    
+    <!-- HAMBURGER MENU BUTTON -->
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </div>
+  
+  <!-- MOBILE NAVIGATION WITH DROPDOWN -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    
+    <!-- MOBILE DROPDOWN: About -->
+    <div class="mobile-dropdown-wrapper">
+      <button class="mobile-dropdown-toggle" data-toggle="about-dropdown">
+        About
+      </button>
+      <div class="mobile-dropdown-menu" id="about-dropdown">
+        <a href="about.html">About Us</a>
+        <a href="team.html">Our Team</a>
+        <a href="programs.html">Programs</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blogs.html">Blog</a>
+      </div>
+    </div>
+    
+   
+    <a href="membership.html" >Membership</a>
+    <a href="conference2026.html">GRSC2026</a>
+    <a href="contact.html">Contact</a>
+    <a href="volunteer.html">Volunteer</a>
+    <a href="donate.html">Donate</a>
+  </div>
+</nav>
+
+  <!-- PAGE HERO -->
+   <section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="section-tag">Our Work</span>
+    <h1>Our Gallery</h1>
+    <p>Photos and videos from our programs, events, and community activities.</p>
+  </div>
+</section>
+
+  
+
+  <section class="gallery-page">
+    <div class="container">
+
+
+      <!-- PHOTO AND VIDEO GRID -->
+      <div class="gallery-full-grid">
+ <div class="gallery-full-item" data-type="video">
+          <iframe
+            src="https://www.youtube.com/embed/ucdbsIvEVHk"
+            title="ILKIREMISHO COMMUNITY FIELD VISIT"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="width:100%;height:100%;position:absolute;top:0;left:0;">
+          </iframe>
+          <div class="gallery-full-overlay" style="pointer-events:none;">
+            <span style="font-size:3rem;">▶</span>
+          </div>
+        </div>
+        <!-- ===== PHOTOS ===== -->
+         <div class="gallery-full-item" data-type="photo">
+          <img src="images/greenspace-sustainability-bootcamp-2026.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305750.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305746.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305734.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305728.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305723.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305711.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305690.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305645.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305641.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305630.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305622.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305617.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305606.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305596.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305583.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305578.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305566.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305543.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305530.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/A7305513.jpg" alt="Bootcamp that convened 50 young changemakers across Kenya.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Bootcamp that convened 50 young changemakers across Kenya.</p>
+          </div>
+        </div>
+
+          <div class="gallery-full-item" data-type="photo">
+          <img src="images/Oxfam1.jpeg" alt="Courtesy call to Oxfam ,Kenyan team to explore potential partnership pathways.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Courtesy call to Oxfam ,Kenyan team to explore potential partnership pathways.</p>
+          </div>
+        </div>
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/award2.jpeg" alt="Courtesy call to Oxfam ,Kenyan team to explore potential partnership pathways.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Awards.</p>
+          </div>
+        </div>
+         <div class="gallery-full-item" data-type="photo">
+          <img src="images/award.jpeg" alt="Courtesy call to Oxfam ,Kenyan team to explore potential partnership pathways.">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Awards.</p>
+          </div>
+        </div>
+
+          <div class="gallery-full-item" data-type="photo">
+          <img src="images/Courtesy call .jpeg" alt="Courtesy call to Amb.Sultan Hajiyev, Ambassador of the Republic of Azerbaijan to Kenya">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Courtesy call to Amb.Sultan Hajiyev, Ambassador of the Republic of Azerbaijan to Kenya</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/Ilkiremisho community in Narok.jpeg" alt="On ground connection with Ilkiremisho community in Narok  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">On ground connection with Ilkiremisho community in Narok</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/Participation at the 3rd INAET Conference in Abidjan1.jpeg" alt="Participation at the 3rd INAET Conference in Abidjan ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Participation at the 3rd INAET Conference in Abidjan</p>
+          </div>
+        </div>
+
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/Participation at the 3rd INAET Conference in Abidjan.jpeg" alt="Panel Participation at the 3rd INAET Conference in Abidjan ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Panel Participation at the 3rd INAET Conference in Abidjan</p>
+          </div>
+        </div>
+
+             <div class="gallery-full-item" data-type="photo">
+          <img src="images/WhatsApp Image 2026-04-25 at 10.49.19 AM (1).jpeg" alt="Ambassabor of Azerbaijan  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Ambassabor of Azerbaijan </p>
+          </div>
+        </div>
+              <div class="gallery-full-item" data-type="photo">
+          <img src="images/WhatsApp Image 2026-04-25 at 10.32.56 AM.jpeg" alt="2nd African Urban Forum  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Panel at 2nd African Urban Forum </p>
+          </div>
+        </div>
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/greengarden.jpeg" alt="Narok Kitchen Garden">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Narok Kitchen Garden Training</p>
+          </div>
+        </div>
+
+              <div class="gallery-full-item" data-type="photo">
+          <img src="images/WhatsApp Image 2026-04-25 at 10.32.56 AM (2).jpeg" alt="2nd African Urban Forum  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Our Team at 2nd African Urban Forum </p>
+          </div>
+        </div>
+     <div class="gallery-full-item" data-type="photo">
+          <img src="images/WhatsApp Image 2026-04-25 at 10.32.56 AM (1).jpeg" alt="2nd African Urban Forum  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dr Rose at 2nd African Urban Forum </p>
+          </div>
+        </div>
+
+                <div class="gallery-full-item" data-type="photo">
+          <img src="images/WhatsApp Image 2026-04-25 at 10.32.55 AM.jpeg" alt="2nd African Urban Forum  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">2nd African Urban Forum </p>
+          </div>
+        </div>
+
+               <div class="gallery-full-item" data-type="photo">
+          <img src="images/WhatsApp Image 2026-04-25 at 10.32.55 AM (1).jpeg" alt="Meeting  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">  </p>
+          </div>
+        </div> 
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/narok1.jpeg" alt="Narok Kitchen Garden">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Narok Kitchen Garden Training</p>
+          </div>
+        </div>
+        
+  <div class="gallery-full-item" data-type="photo">
+          <img src="images/z1.jpeg" alt="Meeting  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">  </p>
+          </div>
+        </div> 
+
+  <div class="gallery-full-item" data-type="photo">
+          <img src="images/WhatsApp Image 2026-04-25 at 10.49.25 AM.jpeg" alt="Meeting  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">  </p>
+          </div>
+        </div> 
+
+  <div class="gallery-full-item" data-type="photo">
+          <img src="images/WhatsApp Image 2026-04-25 at 10.49.20 AM.jpeg" alt="Meeting  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">  </p>
+          </div>
+        </div> 
+
+  <div class="gallery-full-item" data-type="photo">
+          <img src="images/WhatsApp Image 2026-04-25 at 10.49.20 AM (2).jpeg" alt="Meeting  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">  </p>
+          </div>
+        </div> 
+          <div class="gallery-full-item" data-type="photo">
+          <img src="images/WhatsApp Image 2026-04-25 at 10.49.20 AM (1).jpeg" alt="Meeting  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">  </p>
+          </div>
+        </div> 
+          <div class="gallery-full-item" data-type="photo">
+          <img src="images/WhatsApp Image 2026-04-25 at 10.49.19 AM.jpeg" alt="Meeting  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">  </p>
+          </div>
+        </div> 
+                   <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery29.jpeg" alt="Meeting with Ambassabor of Azerbaijan ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;"> </p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery30.jpeg" alt="Meeting with Ambassabor of Azerbaijan ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;"></p>
+          </div>
+        </div>
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/Gendered Dimension of Hunger in Peace building.jpeg" alt=" Gendered Dimension of Hunger in Peace building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Regional round table meeting on Gendered Dimension of Hunger in Peace building</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/communitywork.jpeg" alt="Community Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/felltout.jpeg" alt="Youth Fellowship Program">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Youth Fellowship Program</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery4.jpeg" alt="World Environment Day">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">World Environment Day</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery5.jpeg" alt="Advocacy Campaign">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Advocacy Campaign</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery19.jpeg" alt="Eco-Diplomacy Forum">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Eco-Diplomacy Forum</p>
+          </div>
+        </div>
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery8.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery10.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery18.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+
+        <!-- Add more photos here — copy a block above and change the src and caption -->
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery20.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery21.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery22.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery23.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery24.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery25.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery26.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery27.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+      
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery31.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery33.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery34.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery35.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery36.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery37.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery38.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery39.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery40.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+      
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery41.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery42.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery43.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery44.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery45.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery46.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery47.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery48.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery49.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+      
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery50.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+
+          <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery51.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery52.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery53.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery54.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery57.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+      
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery58.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+
+          <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery59.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery60.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery61.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery62.jpeg" alt="Dissemination Workshop">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Dissemination Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery63.jpeg" alt="Community Engagement">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Community Engagement</p>
+          </div>
+        </div>
+      
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery64.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+
+        
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery65.jpeg" alt="Capacity Building">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">Capacity Building Session</p>
+          </div>
+        </div>
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery66.jpeg" alt="Meeting  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;"> </p>
+          </div>
+        </div>
+        
+<div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery67.jpeg" alt="Meeting ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;"> </p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery68.jpeg" alt="Meeting  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">  </p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery69.jpeg" alt="Meeting ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">  </p>
+          </div>
+        </div>
+
+        <div class="gallery-full-item" data-type="photo">
+          <img src="images/gallery70.jpeg" alt="Meeting  ">
+          <div class="gallery-full-overlay">
+            <p style="color:white;font-size:0.9rem;text-align:center;padding:16px;">  </p>
+          </div>
+        </div>
+      </div><!-- end gallery-full-grid -->
+    </div>
+  </section>
+
+  <section class="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Join a Program Today</h2>
+        <p>Whether as a fellow, community champion, or volunteer <br>There's a place for you in GAN's work.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="volunteer.html" class="btn-cta-primary">Apply as Volunteer</a>
+        <a href="contact.html" class="btn-cta-secondary">Partner With Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="GAN Logo" class="footer-logo">
+         <p>Greenspace Action and Network <br> Together, We can make a differnce.</p>
+           <div class="social-links">
+            <a href="https://www.facebook.com/GreenspaceActionNetwork" class="social-link" aria-label="Facebook" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://x.com/greenspaceyouth" class="social-link" aria-label="X / Twitter" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/greenspaceactionnetwork" class="social-link" aria-label="Instagram" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/youth-greenspace-action-network-org/" class="social-link" aria-label="LinkedIn" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="programs.html#tujenge">Tujenge Jamii</a></li>
+            <li><a href="programs.html#fellowship">Climate Fellowship</a></li>
+            <li><a href="programs.html#innovation">Applied Innovation</a></li>
+            <li><a href="programs.html#diplomacy">Eco-Diplomacy</a></li>
+            <li><a href="programs.html#restoration">Env. Restoration</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><img src="assets/phone-incoming-bold.svg" alt="call icon">+254 702 811 367</p>
+          <p><img src="assets/envelope-simple-bold.svg" alt="email icon">info@greenspaceaction.org</p>
+          <p><img src="assets/globe-bold.svg" alt="website icon">www.greenspaceaction.org</p>
+          <p><img src="assets/map-pin-area-bold.svg" alt="location icon">Nairobi, Kenya <br>P.O Box 300-00100<br>
+Argwings Kodhek Rd.<br>
+Nyaku House, Ist Floor Suite 18</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Greenspace Action and Network. All rights reserved.</p>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    
+    document.querySelectorAll('.gallery-full-item').forEach(function(item) {
+      if (item.querySelector('iframe')) {
+        item.style.position = 'relative';
+        item.style.paddingBottom = '0';
+        item.style.height = '240px';
+      }
+    });
+  </script>
+</body>
+</html>

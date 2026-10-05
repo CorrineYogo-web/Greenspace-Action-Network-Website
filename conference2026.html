@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GRSC2026 – Greenspace Regional Sustainability Conference</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <style>
+    .conference-hero {
+      background: linear-gradient(160deg, var(--green-dark) 0%, #00BF62 100%) center/cover no-repeat;
+      color: white;
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .conference-hero h1 {
+      font-size: 3rem;
+      font-family: var(--font-display);
+      margin-bottom: 1rem;
+      font-weight: 900;
+    }
+    .conference-hero .tagline {
+      font-size: 1.4rem;
+      font-family: var(--font-display);
+      color: #52b788;
+      margin-bottom: 2rem;
+    }
+    .conference-details {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .detail-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    .detail-card strong {
+      display: block;
+      color: #d8f3dc;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.1em;
+    }
+    .detail-card span {
+      font-size: 1.3rem;
+      display: block;
+    }
+    @media (max-width: 1024px) {
+      .conference-details {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .conference-hero h1 {
+        font-size: 2rem;
+      }
+      .conference-hero .tagline {
+        font-size: 1.1rem;
+      }
+      .conference-details {
+        grid-template-columns: 1fr;
+      }
+    }
+    .registration-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    @media (max-width: 768px) {
+      .registration-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .registration-section {
+      scroll-margin-top: 100px;
+    }
+    .form-section {
+      background: var(--cream);
+      padding: 2.5rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+    .thematic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+      .thematic-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .thematic-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--green-mid);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .thematic-card h4 {
+      color: var(--green-dark);
+      margin: 0 0 0.5rem 0;
+      font-size: 0.95rem;
+    }
+    .presenter-fee {
+      background: linear-gradient(135deg, #d8f3dc 0%, #f0fdf4 100%);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 2px solid var(--green-mid);
+      margin: 1rem 0;
+    }
+    .presenter-fee strong {
+      color: var(--green-dark);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .presenter-fee .amount {
+      font-size: 1.4rem;
+      color: var(--green-mid);
+      font-weight: 700;
+    }
+
+    /* ===== RESPONSIVE OVERVIEW GRID (was inline, wasn't collapsing on mobile) ===== */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin: 2rem 0;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* ===== BOOTCAMP SECTION ===== */
+    .bootcamp-section { padding: 5rem 0; background: var(--cream); }
+    .bootcamp-banner {
+      background: linear-gradient(160deg, var(--green-dark) 0%, #0b4a28 100%);
+      border-radius: 16px; padding: 3rem; margin-bottom: 3rem;
+    }
+    .bootcamp-badge {
+      display: inline-block; background: var(--green-light); color: var(--green-dark);
+      font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 0.5rem 1.1rem; border-radius: 50px; margin-bottom: 1.25rem;
+    }
+    .bootcamp-banner h2 {
+      font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 900; color: white; margin-bottom: 0.75rem; line-height: 1.1;
+    }
+    .bootcamp-banner .bootcamp-theme {
+      color: rgba(255,255,255,0.75); font-size: 1.05rem; max-width: 640px;
+      line-height: 1.6; margin-bottom: 1.5rem;
+    }
+    .bootcamp-date-pill {
+      display: inline-block; background: white; color: var(--green-dark);
+      font-weight: 700; padding: 0.6rem 1.25rem; border-radius: 50px; font-size: 0.95rem;
+    }
+    .bootcamp-detail-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; margin: 2rem 0 3rem; }
+    .bootcamp-detail-card { background: white; border: 1px solid rgba(45,106,79,0.12); border-radius: 10px; padding: 1.25rem; }
+    .bootcamp-detail-card strong { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green-mid); margin-bottom: 0.4rem; }
+    .bootcamp-detail-card span { font-size: 0.92rem; color: var(--text-dark); line-height: 1.4; }
+    @media (max-width: 1024px) { .bootcamp-detail-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .programme-table-wrap { overflow-x: auto; margin: 1.5rem 0 2.5rem; border-radius: 10px; border: 1px solid rgba(45,106,79,0.12); }
+    .programme-table { width: 100%; border-collapse: collapse; min-width: 640px; background: white; }
+    .programme-table th { background: var(--green-dark); color: white; text-align: left; padding: 0.85rem 1rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .programme-table td { padding: 0.85rem 1rem; font-size: 0.9rem; color: var(--text-mid); border-top: 1px solid rgba(45,106,79,0.08); vertical-align: top; }
+    .programme-table tr:nth-child(even) td { background: rgba(82,183,136,0.04); }
+    .programme-table td:first-child { white-space: nowrap; font-weight: 600; color: var(--green-dark); }
+
+    @media (max-width: 768px) {
+      .bootcamp-banner { padding: 2rem; }
+      .bootcamp-detail-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== DELEGATE REGISTRATION CHOICE (Kenya / International Google Forms) ===== */
+    .delegate-choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; }
+    @media (max-width: 768px) { .delegate-choice-grid { grid-template-columns: 1fr; } }
+    .delegate-choice-card {
+      display: block; background: white; border: 2px solid rgba(45,106,79,0.12); border-radius: 12px;
+      padding: 2rem; text-align: center; transition: all 0.25s ease; text-decoration: none;
+    }
+    .delegate-choice-card:hover { border-color: var(--green-mid); box-shadow: 0 12px 32px rgba(45,106,79,0.12); transform: translateY(-4px); }
+    .delegate-choice-emoji { font-size: 2.5rem; display: block; margin-bottom: 0.75rem; }
+    .delegate-choice-card h4 { font-family: var(--font-display); font-size: 1.25rem; color: var(--green-dark); margin-bottom: 0.5rem; }
+    .delegate-choice-card p { color: var(--text-mid); font-size: 0.92rem; margin-bottom: 1.25rem; }
+    .delegate-choice-btn { display: inline-block; background: var(--green-mid); color: white; padding: 0.7rem 1.3rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; }
+    .delegate-choice-card:hover .delegate-choice-btn { background: var(--green-dark); }
+  </style>
+</head>
+
+<button id="scrollBtn" class="scroll-btn">
+  <span id="scrollIcon">↑</span>
+</button>
+
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.png" alt="GAN Logo"/>
+      <span>GAN</span>
+    </a>
+
+    <!-- DESKTOP NAVIGATION WITH DROPDOWN -->
+    <ul class="nav-links">
+      <li><a href="index.html" >Home</a></li>
+
+      <!-- DROPDOWN: About → About, Team, Programs -->
+      <li class="has-dropdown">
+        <a href="about.html">About</a>
+        <div class="dropdown-menu">
+          <a href="about.html" >About Us</a>
+          <a href="team.html">Our Team</a>
+          <a href="programs.html">Programs</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blogs.html">Blog</a>
+        </div>
+      </li>
+
+
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="conference2026.html" class="active">GRSC2026</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-ctas">
+      <a href="volunteer.html" class="btn-outline">Volunteer</a>
+      <a href="donate.html" class="btn-solid">Donate</a>
+    </div>
+
+    <!-- HAMBURGER MENU BUTTON -->
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </div>
+
+  <!-- MOBILE NAVIGATION WITH DROPDOWN -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+
+    <!-- MOBILE DROPDOWN: About -->
+    <div class="mobile-dropdown-wrapper">
+      <button class="mobile-dropdown-toggle" data-toggle="about-dropdown">
+        About
+      </button>
+      <div class="mobile-dropdown-menu" id="about-dropdown">
+        <a href="about.html">About Us</a>
+        <a href="team.html">Our Team</a>
+        <a href="programs.html">Programs</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blogs.html">Blog</a>
+      </div>
+    </div>
+
+
+    <a href="membership.html">Membership</a>
+    <a href="conference2026.html">GRSC2026</a>
+    <a href="contact.html">Contact</a>
+    <a href="volunteer.html">Volunteer</a>
+    <a href="donate.html">Donate</a>
+  </div>
+</nav>
+
+<!-- CONFERENCE HERO SECTION -->
+<section class="conference-hero">
+  <div class="container">
+    <span class="section-tag" style="color: #d8f3dc; margin-bottom: 1rem; display: inline-block;">GRSC2026</span>
+    <h1>Greenspace Regional Sustainability Conference</h1>
+    <p class="tagline">Empowering Young People for a Sustainable Future</p>
+
+    <div class="conference-details">
+      <div class="detail-card">
+        <strong>Dates</strong>
+        <span>Oct 28–30, 2026</span>
+      </div>
+      <div class="detail-card">
+        <strong>Location</strong>
+        <span>Nairobi, Kenya</span>
+      </div>
+      <div class="detail-card">
+        <strong>Participants</strong>
+        <span>500+ Delegates</span>
+      </div>
+      <div class="detail-card">
+        <strong>Region</strong>
+        <span>East Africa & Beyond</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW SECTION -->
+<section style="padding: 5rem 0;">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">About the Conference</span>
+      <h2>What is GRSC2026?</h2>
+    </div>
+
+    <div class="overview-grid">
+      <div>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-mid); margin-bottom: 1.5rem;">
+          The <strong>Greenspace Regional Sustainability Conference 2026</strong> marks the 5th edition of GAN's flagship eco diplomacy convening. This action oriented platform brings together government leaders, corporate executives, young innovators, development partners, and civil society to advance scalable sustainability solutions across East Africa.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-mid); margin-bottom: 1.5rem;">
+          Unlike traditional climate conferences centered on discussion, the GRSC2026 focuses on <strong>action, partnerships, and resource mobilization</strong>. The conference bridges grassroots innovation with regional collaboration, shaping the next generation of climate leadership and green entrepreneurship.
+        </p>
+        <p style="font-size: 1rem; color: var(--text-light); line-height: 1.7;">
+          <strong>Aligned with:</strong> Paris Agreement, African Union Agenda 2063, UN Agenda 2030, and COP31 Preparations
+        </p>
+      </div>
+      <div style="background: linear-gradient(135deg, #d8f3dc 0%, #f0fdf4 100%); padding: 2rem; border-radius: 12px; border: 2px solid var(--green-mid);">
+        <h3 style="color: var(--green-dark); margin-bottom: 1.5rem;">Conference Objectives</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+            <span style="position: absolute; left: 0; color: var(--green-mid); font-weight: bold;"></span>
+            Enhance multi stakeholder participation in climate governance
+          </li>
+          <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+            <span style="position: absolute; left: 0; color: var(--green-mid); font-weight: bold;"></span>
+            Showcase youth led green enterprises and innovations
+          </li>
+          <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+            <span style="position: absolute; left: 0; color: var(--green-mid); font-weight: bold;"></span>
+            Strengthen cross sectoral partnerships
+          </li>
+          <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+            <span style="position: absolute; left: 0; color: var(--green-mid); font-weight: bold;"></span>
+            Mobilize financial resources for sustainability
+          </li>
+          <li style="padding-left: 1.5rem; position: relative;">
+            <span style="position: absolute; left: 0; color: var(--green-mid); font-weight: bold;"></span>
+            Amplify youth voices in global climate negotiations
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- THEMATIC AREAS SECTION -->
+<section style="padding: 5rem 0; background: var(--cream);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Conference Pillars</span>
+      <h2>11 Thematic Areas</h2>
+    </div>
+    <p style="text-align: center; color: var(--text-mid); margin-bottom: 2rem; font-size: 1.1rem;">
+      The conference addresses East Africa's most pressing sustainability challenges across these core themes:
+    </p>
+
+    <div class="thematic-grid">
+      <div class="thematic-card">
+        <h4>The Creative Industry and Green Economy</h4>
+      </div>
+      <div class="thematic-card">
+        <h4>Climate Smart Agriculture & Food Security</h4>
+      </div>
+      <div class="thematic-card">
+        <h4>Climate Migration & Refugee Inclusion</h4>
+      </div>
+      <div class="thematic-card">
+        <h4>Youth Participation in Policy</h4>
+      </div>
+      <div class="thematic-card">
+        <h4>Applied Innovation & Technology</h4>
+      </div>
+      <div class="thematic-card">
+        <h4>Eco-Diplomacy & Partnerships</h4>
+      </div>
+      <div class="thematic-card">
+        <h4>Climate Governance & Policy</h4>
+      </div>
+      <div class="thematic-card">
+        <h4>Lake Ecosystem & Water Sustainability</h4>
+      </div>
+      <div class="thematic-card">
+        <h4>Children & Climate Resilience</h4>
+      </div>
+      <div class="thematic-card">
+        <h4>Circular Economy & Waste Management</h4>
+      </div>
+      <div class="thematic-card">
+        <h4>Faith Based Organizations & Climate Justice</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION SECTIONS -->
+<section style="padding: 5rem 0;">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Get Involved</span>
+      <h2>Multiple Ways to Participate</h2>
+    </div>
+
+    <!-- PARTICIPANT REGISTRATION -->
+    <div class="registration-section" id="participant-registration">
+      <div class="form-section">
+        <h3 style="margin-bottom: 1rem;">Participant Registration</h3>
+        <p style="color: var(--text-mid); margin-bottom: 2rem;">
+          Register to attend the 3 day conference as a delegate. Whether you're a policymaker, young leader, entrepreneur, or civil society representative, we want you to be part of this movement. Choose the form that matches where you're joining us from.
+        </p>
+
+        <div class="delegate-choice-grid">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfcwAMT5iSHNT9enXL169oxl3OEgpb65Rk1vDGusa1S0zHpfQ/viewform?usp=header" target="_blank" rel="noopener" class="delegate-choice-card">
+            <span class="delegate-choice-emoji">🇰🇪</span>
+            <h4>Kenyan Delegates</h4>
+            <p>Registering from within Kenya? Use this form.</p>
+            <span class="delegate-choice-btn">Register as a Kenyan Delegate &rarr;</span>
+          </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeot14XW1ZU_phGVC_kADNqH_Bui1UyspyY3DxgpXckhaCQ2w/viewform?usp=header" target="_blank" rel="noopener" class="delegate-choice-card">
+             <span class="delegate-choice-emoji">INT</span>
+            <h4>International Delegates</h4>
+            <p>Joining us from outside Kenya? Use this form.</p>
+            <span class="delegate-choice-btn">Register as an International Delegate &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTNER REGISTRATION -->
+    <div class="registration-section" id="partner-registration">
+      <div class="form-section">
+        <h3 style="margin-bottom: 1rem;">Partner Registration</h3>
+        <p style="color: var(--text-mid); margin-bottom: 2rem;">
+          Join us as an official partner and amplify your organization's impact. Partnerships are available at various engagement levels to suit organizational capacity and commitment.
+        </p>
+
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid var(--green-mid);">
+          <h4 style="color: var(--green-dark); margin-top: 0;">Partnership Tiers</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 1rem;"><strong>Platinum Partner:</strong> Event sponsorship, branding visibility, booth space, speaking slot</li>
+            <li style="margin-bottom: 1rem;"><strong>Gold Partner:</strong> Co-organizing support, branded booth, network recognition</li>
+            <li style="margin-bottom: 1rem;"><strong>Silver Partner:</strong> Booth space, conference materials, organizational profile</li>
+            <li><strong>Bronze Partner:</strong> In-kind support, organizational listing, networking access</li>
+          </ul>
+        </div>
+
+        <form id="partnerForm" action="https://formspree.io/f/moeqdrdz" method="POST" class="contact-form-element">
+          <input type="hidden" name="_subject" value="New GRSC2026 Partnership Interest"/>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Organization Name</label>
+              <input type="text" name="organization_name" placeholder="Your Organization" required/>
+            </div>
+            <div class="form-group">
+              <label>Organization Type</label>
+              <select name="organization_type" required>
+                <option>Government Agency</option>
+                <option>Private Sector / Corporation</option>
+                <option>NGO / Civil Society</option>
+                <option>Development Partner</option>
+                <option>Academic Institution</option>
+                <option>Faith-Based Organization</option>
+                <option>International Organization</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Contact Person Name</label>
+              <input type="text" name="contact_name" placeholder="Full Name" required/>
+            </div>
+            <div class="form-group">
+              <label>Contact Email</label>
+              <input type="email" name="contact_email" placeholder="email@organization.org" required/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="contact_phone" placeholder="+254 7XX XXX XXX" required/>
+            </div>
+            <div class="form-group">
+              <label>Country</label>
+              <input type="text" name="partner_country" placeholder="Kenya" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Preferred Partnership Tier</label>
+            <select name="partnership_tier" required>
+              <option>Platinum Partner</option>
+              <option>Gold Partner</option>
+              <option>Silver Partner</option>
+              <option>Bronze Partner</option>
+              <option>Undecided - Discuss Options</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Organization's Sustainability Focus Areas</label>
+            <textarea name="focus_areas" placeholder="List your organization's key areas of focus..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>How can your organization contribute? (Optional)</label>
+            <textarea name="contribution" placeholder="Financial support, in-kind resources, expertise, etc..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Partnership Interest</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- EXHIBITION REGISTRATION -->
+    <div class="registration-section" id="exhibition-registration">
+      <div class="form-section">
+        <h3 style="margin-bottom: 1rem;">Exhibition Registration</h3>
+        <p style="color: var(--text-mid); margin-bottom: 2rem;">
+          Showcase your green innovations, products, and services to 500+ delegates from across East Africa. Exhibition booths are available on a first-come, first-served basis.
+        </p>
+
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid var(--green-mid);">
+          <h4 style="color: var(--green-dark); margin-top: 0;">Booth Options</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 1rem;"><strong>Standard Booth (3x3m):</strong> Ideal for most organizations | Limited interactive space</li>
+            <li style="margin-bottom: 1rem;"><strong>Premium Booth (6x4m):</strong> Enhanced visibility | Better for product demonstrations</li>
+            <li><strong>Experiential Booth (Custom):</strong> Large-scale installations | Contact us for pricing</li>
+          </ul>
+        </div>
+
+        <form id="exhibitionForm" action="https://formspree.io/f/xgaekdkj" method="POST" class="contact-form-element">
+          <input type="hidden" name="_subject" value="New GRSC2026 Exhibition Registration"/>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Organization Name</label>
+              <input type="text" name="exhibitor_org" placeholder="Your Organization" required/>
+            </div>
+            <div class="form-group">
+              <label>Contact Person</label>
+              <input type="text" name="exhibitor_contact" placeholder="Full Name" required/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="exhibitor_email" placeholder="email@organization.org" required/>
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" name="exhibitor_phone" placeholder="+254 7XX XXX XXX" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>What will you be exhibiting?</label>
+            <textarea name="exhibit_description" placeholder="Describe your products, services, or innovations..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Booth Type</label>
+            <select name="booth_type" required>
+              <option>Standard Booth (3x3m)</option>
+              <option>Premium Booth (6x4m)</option>
+              <option>Experiential Booth (Custom)</option>
+              <option>Undecided - Need Information</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Which thematic area best aligns with your exhibit?</label>
+            <select name="exhibit_theme" required>
+              <option>Creative Industry & Green Economy</option>
+              <option>Climate-Smart Agriculture</option>
+              <option>Climate Migration & Inclusion</option>
+              <option>Youth Participation in Policy</option>
+              <option>Applied Innovation & Technology</option>
+              <option>Eco-Diplomacy & Partnerships</option>
+              <option>Climate Governance & Policy</option>
+              <option>Lake Ecosystem & Water</option>
+              <option>Children & Climate Resilience</option>
+              <option>Circular Economy & Waste</option>
+              <option>Faith-Based Organizations & Justice</option>
+              <option>Multi-thematic</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Special Requirements (Optional)</label>
+            <textarea name="special_requirements" placeholder="Power supply, internet, furniture, etc..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Register Exhibition Booth</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- RESEARCH PAPER SUBMISSIONS -->
+    <div class="registration-section" id="research-submissions">
+      <div class="form-section">
+        <h3 style="margin-bottom: 1rem;">Research Paper Presentations</h3>
+        <p style="color: var(--text-mid); margin-bottom: 2rem;">
+          Submit your research findings, case studies, or innovations related to any of our 11 thematic areas. Selected presenters will have the opportunity to share their work during dedicated research sessions.
+        </p>
+
+        <div style="background: linear-gradient(135deg, #fff5e6 0%, #fffaf0 100%); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid var(--earth-mid);">
+          <h4 style="color: var(--earth-dark); margin-top: 0;">Submission Guidelines</h4>
+          <ul style="list-style: none; padding: 0; color: var(--text-mid);">
+            <li style="margin-bottom: 0.8rem;"> Submit original or previously unpublished research</li>
+            <li style="margin-bottom: 0.8rem;"> Presentation time: 15-20 minutes per presenter</li>
+            <li style="margin-bottom: 0.8rem;"> Provide title, abstract (500 words max), and bio</li>
+            <li style="margin-bottom: 0.8rem;"> Research must align with one or more thematic areas</li>
+            <li> All presenters will receive conference materials and networking access</li>
+          </ul>
+        </div>
+
+        <div class="presenter-fee">
+          <strong>Presenter Registration Fee</strong>
+          <p style="margin: 0.5rem 0; color: var(--text-mid);">One time fee to secure your speaking slot</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+            <div>
+              <strong style="display: block; margin-bottom: 0.5rem;">Non East African Presenters</strong>
+              <div class="amount">USD $100</div>
+            </div>
+            <div>
+              <strong style="display: block; margin-bottom: 0.5rem;">East African Presenters</strong>
+              <div class="amount">USD $50</div>
+            </div>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 1rem; margin-bottom: 0;">
+            Payment instructions will be provided after form submission.
+          </p>
+        </div>
+
+        <form id="researchForm" action="https://formspree.io/f/xppzdbdv" method="POST" class="contact-form-element">
+          <input type="hidden" name="_subject" value="New GRSC2026 Research Paper Submission"/>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Presenter First Name</label>
+              <input type="text" name="presenter_first" placeholder="Jane" required/>
+            </div>
+            <div class="form-group">
+              <label>Presenter Last Name</label>
+              <input type="text" name="presenter_last" placeholder="Doe" required/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" name="presenter_email" placeholder="jane@example.com" required/>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="presenter_phone" placeholder="+254 7XX XXX XXX" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Affiliation / Organization</label>
+            <input type="text" name="presenter_affiliation" placeholder="University, Research Institute, NGO, etc." required/>
+          </div>
+
+          <div class="form-group">
+            <label>Presenter Location</label>
+            <select name="presenter_location" required>
+              <option>Kenya</option>
+              <option>Uganda</option>
+              <option>Tanzania</option>
+              <option>Rwanda</option>
+              <option>Burundi</option>
+              <option>South Sudan</option>
+              <option>Ethiopia</option>
+              <option>Other East Africa</option>
+              <option>Non-East Africa</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Research Paper Title</label>
+            <input type="text" name="paper_title" placeholder="Your paper title" required/>
+          </div>
+
+          <div class="form-group">
+            <label>Abstract (500 words max)</label>
+            <textarea name="paper_abstract" placeholder="Provide a concise summary of your research, its findings, and relevance to the conference themes..." maxlength="2500" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Primary Thematic Area</label>
+            <select name="paper_theme" required>
+              <option>Creative Industry & Green Economy</option>
+              <option>Climate-Smart Agriculture</option>
+              <option>Climate Migration & Inclusion</option>
+              <option>Youth Participation in Policy</option>
+              <option>Applied Innovation & Technology</option>
+              <option>Eco-Diplomacy & Partnerships</option>
+              <option>Climate Governance & Policy</option>
+              <option>Lake Ecosystem & Water</option>
+              <option>Children & Climate Resilience</option>
+              <option>Circular Economy & Waste</option>
+              <option>Faith Based Organizations & Justice</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Secondary Thematic Areas (if applicable)</label>
+            <textarea name="paper_secondary" placeholder="List any additional thematic areas..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Brief Professional Bio (100 words)</label>
+            <textarea name="presenter_bio" placeholder="Your professional background, research interests, recent publications..." maxlength="500" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Co-Presenters (if applicable)</label>
+            <textarea name="co_presenters" placeholder="Names and affiliations of any co-presenters..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Research Paper</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Questions? We're Here to Help</h2>
+        <p>Didn't find what you're looking for? Contact our conference team for more information on sponsorships, logistics, or special requests.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-cta-primary">Contact Conference Team</a>
+        <a href="blogs.html?post=2026-10-28-grsc2026-conference" class="btn-cta-secondary">Learn More About GRSC2026</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="GAN Logo" class="footer-logo">
+        <p>Greenspace Action and Network <br> Together, We can make a difference.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/GreenspaceActionNetwork" class="social-link" aria-label="Facebook" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://x.com/greenspaceyouth" class="social-link" aria-label="X / Twitter" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/greenspaceactionnetwork" class="social-link" aria-label="Instagram" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/youth-greenspace-action-network-org/" class="social-link" aria-label="LinkedIn" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html#tujenge">Tujenge Jamii</a></li>
+          <li><a href="programs.html#fellowship">Climate Fellowship</a></li>
+          <li><a href="programs.html#innovation">Applied Innovation</a></li>
+          <li><a href="programs.html#diplomacy">Eco-Diplomacy</a></li>
+          <li><a href="programs.html#restoration">Env. Restoration</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><img src="assets/phone-incoming-bold.svg" alt="call icon">+254 702 811 367</p>
+        <p><img src="assets/envelope-simple-bold.svg" alt="email icon">info@greenspaceaction.org</p>
+        <p><img src="assets/globe-bold.svg" alt="website icon">www.greenspaceaction.org</p>
+        <p><img src="assets/map-pin-area-bold.svg" alt="location icon">Nairobi, Kenya <br>P.O Box 300-00100<br>
+Argwings Kodhek Rd.<br>
+Nyaku House, Ist Floor Suite 18</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Greenspace Action and Network. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ---- Formspree submission for the remaining 3 custom forms ----
+  function wireForm(formId, submitLabel, successMsg, failMsg) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const button = this.querySelector(".btn-submit");
+      const originalLabel = button.innerText;
+      button.innerText = submitLabel;
+      button.disabled = true;
+
+      fetch(this.action, {
+        method: "POST",
+        body: new FormData(this),
+        headers: { "Accept": "application/json" }
+      })
+        .then((response) => {
+          if (response.ok) {
+            showPopup(successMsg);
+            form.reset();
+          } else {
+            showPopup(failMsg);
+          }
+        })
+        .catch(() => showPopup(failMsg))
+        .finally(() => {
+          button.innerText = originalLabel;
+          button.disabled = false;
+        });
+    });
+  }
+
+  wireForm("partnerForm", "Submitting...", "Partnership interest submitted! Our team will contact you shortly.", "Submission failed. Please try again.");
+  wireForm("exhibitionForm", "Registering...", "Exhibition booth registration received! We'll follow up with details.", "Registration failed. Please try again.");
+  wireForm("researchForm", "Submitting...", "Research paper submitted! Payment instructions will be emailed to you.", "Submission failed. Please try again.");
+
+  function showPopup(message) {
+    let popup = document.createElement("div");
+    popup.innerText = message;
+    popup.style.position = "fixed";
+    popup.style.bottom = "20px";
+    popup.style.right = "20px";
+    popup.style.background = "#111";
+    popup.style.color = "#fff";
+    popup.style.padding = "12px 20px";
+    popup.style.borderRadius = "8px";
+    popup.style.zIndex = "9999";
+    popup.style.fontSize = "14px";
+    popup.style.boxShadow = "0 5px 20px rgba(0,0,0,0.2)";
+
+    document.body.appendChild(popup);
+
+    setTimeout(() => popup.remove(), 4000);
+  }
+});
+</script>
+
+</body>
+</html>

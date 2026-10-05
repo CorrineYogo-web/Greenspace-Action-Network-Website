@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog & Insights – GAN</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Load the posts data file — all blog content lives here -->
+  <script src="posts-data.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+</head>
+
+<button id="scrollBtn" class="scroll-btn">
+  <span id="scrollIcon">↑</span>
+</button>
+
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.png" alt="GAN Logo"/>
+      <span>GAN</span>
+    </a>
+    
+    <!-- DESKTOP NAVIGATION WITH DROPDOWN -->
+    <ul class="nav-links">
+      <li><a href="index.html" >Home</a></li>
+      
+      <!-- DROPDOWN: About → About, Team, Programs -->
+      <li class="has-dropdown">
+        <a href="about.html">About</a>
+        <div class="dropdown-menu">
+          <a href="about.html" >About Us</a>
+          <a href="team.html">Our Team</a>
+          <a href="programs.html">Programs</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="blogs.html" class="active">Blog</a>
+        </div>
+      </li>
+      
+      
+      <li><a href="membership.html" >Membership</a></li>
+      <li><a href="conference2026.html">GRSC2026</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="nav-ctas">
+      <a href="volunteer.html" class="btn-outline">Volunteer</a>
+      <a href="donate.html" class="btn-solid">Donate</a>
+    </div>
+    
+    <!-- HAMBURGER MENU BUTTON -->
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </div>
+  
+  <!-- MOBILE NAVIGATION WITH DROPDOWN -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    
+    <!-- MOBILE DROPDOWN: About -->
+    <div class="mobile-dropdown-wrapper">
+      <button class="mobile-dropdown-toggle" data-toggle="about-dropdown">
+        About
+      </button>
+      <div class="mobile-dropdown-menu" id="about-dropdown">
+        <a href="about.html">About Us</a>
+        <a href="team.html">Our Team</a>
+        <a href="programs.html">Programs</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blogs.html">Blog</a>
+      </div>
+    </div>
+    
+    
+    <a href="membership.html" >Membership</a>
+    <a href="conference2026.html">GRSC2026</a>
+    <a href="contact.html">Contact</a>
+    <a href="volunteer.html">Volunteer</a>
+    <a href="donate.html">Donate</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="section-tag">Insights & Stories</span>
+    <h1>Blog & Resources</h1>
+    <p>Thought leadership on climate action, community resilience, and youth leadership. Featuring insights from our team, research findings, and guest contributions.</p>
+  </div>
+</section>
+
+<!-- NEWSLETTER SIGNUP BANNER -->
+<section class="newsletter-banner">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <h2>Stay in the Loop</h2>
+        <p>Get monthly insights on climate action, sustainability, and community resilience directly to your inbox.</p>
+      </div>
+      <form class="newsletter-form" action="https://usebasin.com/f/0ef09a25f451" method="POST">
+    <input type="email" name="email" placeholder="your@email.com" required />
+    
+    <input type="text" name="_gotcha" style="display:none">
+    
+    <button type="submit" class="btn-solid">Subscribe</button>
+</form>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER & SORT -->
+<section class="blog-filters">
+  <div class="container">
+    <div class="filters-wrapper">
+      <span class="filter-label">Filter by:</span>
+      <div class="filter-buttons" id="filterButtons">
+        <button class="filter-btn active" data-filter="all">All</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED POST -->
+<section class="blog-featured" id="featuredSection" style="display: none;">
+  <div class="container">
+    <div class="featured-post" id="featuredPost"></div>
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section class="blog-grid-section">
+  <div class="container">
+    <div class="blog-grid" id="blogGrid">
+      <p style="text-align:center;padding:2rem;color:var(--text-light);">Loading posts...</p>
+    </div>
+    <div class="blog-pagination">
+      <button class="btn-outline-green" id="loadMoreBtn" style="display:none;">Load More Articles</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Have a Story to Share?</h2>
+        <p>We welcome guest contributions, research collaborations, and case studies from partners and community members.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn-cta-primary">Submit a Guest Post</a>
+        <a href="#newsletter-banner" class="btn-cta-secondary">Subscribe to Newsletter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="GAN Logo" class="footer-logo">
+        <p>Greenspace Action and Network <br> Together, We can make a differnce.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/GreenspaceActionNetwork" class="social-link" aria-label="Facebook" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://x.com/greenspaceyouth" class="social-link" aria-label="X / Twitter" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/greenspaceactionnetwork" class="social-link" aria-label="Instagram" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/youth-greenspace-action-network-org/" class="social-link" aria-label="LinkedIn" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="programs.html#tujenge">Tujenge Jamii</a></li>
+          <li><a href="programs.html#fellowship">Climate Fellowship</a></li>
+          <li><a href="programs.html#innovation">Applied Innovation</a></li>
+          <li><a href="programs.html#diplomacy">Eco-Diplomacy</a></li>
+          <li><a href="programs.html#restoration">Env. Restoration</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><img src="assets/phone-incoming-bold.svg" alt="call icon">+254 702 811 367</p>
+        <p><img src="assets/envelope-simple-bold.svg" alt="email icon">info@greenspaceaction.org</p>
+        <p><img src="assets/globe-bold.svg" alt="website icon">www.greenspaceaction.org</p>
+        <p><img src="assets/map-pin-area-bold.svg" alt="location icon">Nairobi, Kenya <br>P.O Box 300-00100<br>
+Argwings Kodhek Rd.<br>
+Nyaku House, Ist Floor Suite 18</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Greenspace Action and Network. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<script>
+class BlogSystem {
+  constructor() {
+    this.posts = [];
+    this.allCategories = new Set();
+    this.postsPerPage = 6;
+    this.currentPage = 1;
+    this.currentFilter = 'all';
+    this.init();
+  }
+
+  init() {
+    // Sort posts newest first
+    this.posts = (GAN_BLOG_POSTS || []).sort((a, b) => new Date(b.date) - new Date(a.date));
+    this.posts.forEach(p => this.allCategories.add(p.category));
+    this.setupFilters();
+    this.displayPosts();
+  }
+
+  setupFilters() {
+    const filterButtons = document.getElementById('filterButtons');
+    filterButtons.innerHTML = '<button class="filter-btn active" data-filter="all">All</button>';
+
+    this.allCategories.forEach(category => {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn';
+      btn.setAttribute('data-filter', category);
+      btn.textContent = category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ');
+      filterButtons.appendChild(btn);
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        this.currentFilter = btn.getAttribute('data-filter');
+        this.currentPage = 1;
+        this.displayPosts();
+      });
+    });
+  }
+
+  getFilteredPosts() {
+    if (this.currentFilter === 'all') return this.posts;
+    return this.posts.filter(p => p.category === this.currentFilter);
+  }
+
+  displayPosts() {
+    const filtered = this.getFilteredPosts();
+    const blogGrid = document.getElementById('blogGrid');
+
+    if (filtered.length === 0) {
+      blogGrid.innerHTML = '<p style="text-align:center;padding:2rem;color:var(--text-light);">No posts found in this category.</p>';
+      document.getElementById('featuredSection').style.display = 'none';
+      return;
+    }
+
+    const featured = filtered.find(p => p.featured);
+    if (featured) {
+      this.displayFeaturedPost(featured);
+    } else {
+      document.getElementById('featuredSection').style.display = 'none';
+    }
+
+    const start = (this.currentPage - 1) * this.postsPerPage;
+    const end = start + this.postsPerPage;
+    const pagePosts = filtered.slice(start, end);
+
+    if (this.currentPage === 1) {
+      blogGrid.innerHTML = pagePosts.map(p => this.createPostCard(p)).join('');
+    } else {
+      blogGrid.innerHTML += pagePosts.map(p => this.createPostCard(p)).join('');
+    }
+
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    if (end < filtered.length) {
+      loadMoreBtn.style.display = 'block';
+      loadMoreBtn.onclick = () => { this.currentPage++; this.displayPosts(); };
+    } else {
+      loadMoreBtn.style.display = 'none';
+    }
+  }
+
+  displayFeaturedPost(post) {
+    const tagsHtml = (post.tags || []).length > 0
+      ? `<div class="featured-tags">${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`
+      : '';
+
+    document.getElementById('featuredPost').innerHTML = `
+      <div class="featured-image">
+        <img src="${post.featured_image}" alt="${post.title}" onerror="this.style.display='none'"/>
+        <span class="featured-badge">Featured</span>
+      </div>
+      <div class="featured-content">
+        <div class="post-meta">
+          <span class="post-type ${post.category}">${post.category.charAt(0).toUpperCase() + post.category.slice(1)}</span>
+          <span class="post-date">${post.date}</span>
+          <span class="post-author">By ${post.author}</span>
+        </div>
+        <h2 class="featured-title">${post.title}</h2>
+        <p class="featured-excerpt">${post.excerpt}</p>
+        ${tagsHtml}
+        <a href="blog-post.html?post=${post.slug}" class="btn-outline-green">Read Full Article →</a>
+      </div>
+    `;
+    document.getElementById('featuredSection').style.display = 'block';
+  }
+
+  createPostCard(post) {
+    const cat = post.category.toLowerCase().replace(' ', '-');
+    const tagsHtml = (post.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+    return `
+      <article class="blog-card" data-filter="${post.category}">
+        <div class="blog-image">
+          <img src="${post.featured_image}" alt="${post.title}" onerror="this.style.display='none'"/>
+          <span class="post-type ${cat}">${post.category.charAt(0).toUpperCase() + post.category.slice(1)}</span>
+        </div>
+        <div class="blog-content">
+          <div class="post-meta">
+            <span class="post-date">${post.date}</span>
+            <span class="post-author">By ${post.author}</span>
+          </div>
+          <h3><a href="blog-post.html?post=${post.slug}">${post.title}</a></h3>
+          <p>${post.excerpt}</p>
+          <div class="post-tags">${tagsHtml}</div>
+          <a href="blog-post.html?post=${post.slug}" class="read-more">Read More →</a>
+        </div>
+      </article>
+    `;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => new BlogSystem());
+</script>
+
+</body>
+</html>
